@@ -3,23 +3,16 @@
     "description": "Bionic Reding Extension to read 10x faster!",
     "version": "1.0",
     "manifest_version": 3,
-    "permissions": [
-        "storage",
-        "activeTab",
-        "scripting"
-    ],
-    "background": {
-        "service_worker": "bionicReading.js"
-    },
-    "action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "/images/br16.png",
-            "32": "/images/br32.png",
-            "48": "/images/br48.png",
-            "128": "/images/br128.png"
+    "content_scripts": [
+        {
+            "matches": [
+                "https://developer.spotify.com/*"
+            ],
+            "css": [
+                "br.css"
+            ]
         }
-    },
+    ],
     "icons": {
         "16": "/images/br16.png",
         "32": "/images/br32.png",
